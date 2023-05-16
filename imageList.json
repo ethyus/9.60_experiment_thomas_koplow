@@ -1,0 +1,26 @@
+{
+    "hybrid_images": [
+      {
+        "number": 1,
+        "images": [
+          "images/hybrid_images/hybrid_image_1/hybrid_cat_and_car_blurring_0.jpg",
+          "images/hybrid_images/hybrid_image_1/hybrid_cat_and_car_blurring_1.jpg",
+          "images/hybrid_images/hybrid_image_1/hybrid_cat_and_car_blurring_2.jpg"
+        ]
+      },
+      {
+        "number": 2,
+        "images": [
+          "images/hybrid_images/hybrid_image_2/hybrid_dog_and_bike_blurring_0.jpg",
+          "images/hybrid_images/hybrid_image_2/hybrid_dog_and_bike_blurring_1.jpg",
+          "images/hybrid_images/hybrid_image_2/hybrid_dog_and_bike_blurring_2.jpg"
+        ]
+      }
+    ],
+    "original_images": [
+      "images/original_images/original_sports_car.jpg",
+      "images/original_images/original_tiger_cat.jpg"
+    ]
+  }
+  
+  

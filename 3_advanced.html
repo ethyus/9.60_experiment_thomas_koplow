@@ -20,6 +20,134 @@
 <body></body>
 
 <script>
+    // Maintain a hierarchy of where the files are // easy for processing
+    let imageList = {
+        "hybrid_images": [
+        {
+            "number": 1,
+            "images": [
+            "images/hybrid_images/hybrid_image_1_high_freq_desktop computer-low_freq_dumbbell-blur_0.jpg",
+            "images/hybrid_images/hybrid_image_1_high_freq_desktop computer-low_freq_dumbbell-blur_1.jpg",
+            "images/hybrid_images/hybrid_image_1_high_freq_desktop computer-low_freq_dumbbell-blur_2.jpg",
+            "images/hybrid_images/hybrid_image_1_high_freq_desktop computer-low_freq_dumbbell-blur_3.jpg",
+            "images/hybrid_images/hybrid_image_1_high_freq_desktop computer-low_freq_dumbbell-blur_4.jpg"
+            ]
+        },
+        {
+            "number": 8,
+            "images": [
+            "images/hybrid_images/hybrid_image_8_high_freq_dhole-low_freq_horned rattlesnake-blur_0.jpg",
+            "images/hybrid_images/hybrid_image_8_high_freq_dhole-low_freq_horned rattlesnake-blur_1.jpg",
+            "images/hybrid_images/hybrid_image_8_high_freq_dhole-low_freq_horned rattlesnake-blur_2.jpg",
+            "images/hybrid_images/hybrid_image_8_high_freq_dhole-low_freq_horned rattlesnake-blur_3.jpg",
+            "images/hybrid_images/hybrid_image_8_high_freq_dhole-low_freq_horned rattlesnake-blur_4.jpg"
+            ]
+        },
+        {
+            "number": 9,
+            "images": [
+            "images/hybrid_images/hybrid_image_9_high_freq_red panda-low_freq_bloodhound-blur_0.jpg",
+            "images/hybrid_images/hybrid_image_9_high_freq_red panda-low_freq_bloodhound-blur_1.jpg",
+            "images/hybrid_images/hybrid_image_9_high_freq_red panda-low_freq_bloodhound-blur_2.jpg",
+            "images/hybrid_images/hybrid_image_9_high_freq_red panda-low_freq_bloodhound-blur_3.jpg",
+            "images/hybrid_images/hybrid_image_9_high_freq_red panda-low_freq_bloodhound-blur_4.jpg"
+            ]
+        },
+        {
+            "number": 7,
+            "images": [
+            "images/hybrid_images/hybrid_image_7_high_freq_red-breasted merganser-low_freq_pomegranate-blur_0.jpg",
+            "images/hybrid_images/hybrid_image_7_high_freq_red-breasted merganser-low_freq_pomegranate-blur_1.jpg",
+            "images/hybrid_images/hybrid_image_7_high_freq_red-breasted merganser-low_freq_pomegranate-blur_2.jpg",
+            "images/hybrid_images/hybrid_image_7_high_freq_red-breasted merganser-low_freq_pomegranate-blur_3.jpg",
+            "images/hybrid_images/hybrid_image_7_high_freq_red-breasted merganser-low_freq_pomegranate-blur_4.jpg"
+            ]
+        },
+        {
+            "number": 10,
+            "images": [
+            "images/hybrid_images/hybrid_image_10_high_freq_koala bear-low_freq_wooden spoon-blur_0.jpg",
+            "images/hybrid_images/hybrid_image_10_high_freq_koala bear-low_freq_wooden spoon-blur_1.jpg",
+            "images/hybrid_images/hybrid_image_10_high_freq_koala bear-low_freq_wooden spoon-blur_2.jpg",
+            "images/hybrid_images/hybrid_image_10_high_freq_koala bear-low_freq_wooden spoon-blur_3.jpg",
+            "images/hybrid_images/hybrid_image_10_high_freq_koala bear-low_freq_wooden spoon-blur_4.jpg"
+            ]
+        },
+        {
+            "number": 5,
+            "images": [
+            "images/hybrid_images/hybrid_image_5_high_freq_hare-low_freq_oscilloscope-blur_0.jpg",
+            "images/hybrid_images/hybrid_image_5_high_freq_hare-low_freq_oscilloscope-blur_1.jpg",
+            "images/hybrid_images/hybrid_image_5_high_freq_hare-low_freq_oscilloscope-blur_2.jpg",
+            "images/hybrid_images/hybrid_image_5_high_freq_hare-low_freq_oscilloscope-blur_3.jpg",
+            "images/hybrid_images/hybrid_image_5_high_freq_hare-low_freq_oscilloscope-blur_4.jpg"
+            ]
+        },
+        {
+            "number": 6,
+            "images": [
+            "images/hybrid_images/hybrid_image_6_high_freq_space shuttle-low_freq_tow truck-blur_0.jpg",
+            "images/hybrid_images/hybrid_image_6_high_freq_space shuttle-low_freq_tow truck-blur_1.jpg",
+            "images/hybrid_images/hybrid_image_6_high_freq_space shuttle-low_freq_tow truck-blur_2.jpg",
+            "images/hybrid_images/hybrid_image_6_high_freq_space shuttle-low_freq_tow truck-blur_3.jpg",
+            "images/hybrid_images/hybrid_image_6_high_freq_space shuttle-low_freq_tow truck-blur_4.jpg"
+            ]
+        },
+        {
+            "number": 4,
+            "images": [
+            "images/hybrid_images/hybrid_image_4_high_freq_squirrel monkey-low_freq_carpenter_s kit-blur_0.jpg",
+            "images/hybrid_images/hybrid_image_4_high_freq_squirrel monkey-low_freq_carpenter_s kit-blur_1.jpg",
+            "images/hybrid_images/hybrid_image_4_high_freq_squirrel monkey-low_freq_carpenter_s kit-blur_2.jpg",
+            "images/hybrid_images/hybrid_image_4_high_freq_squirrel monkey-low_freq_carpenter_s kit-blur_3.jpg",
+            "images/hybrid_images/hybrid_image_4_high_freq_squirrel monkey-low_freq_carpenter_s kit-blur_4.jpg"
+            ]
+        },
+        {
+            "number": 2,
+            "images": [
+            "images/hybrid_images/hybrid_image_2_high_freq_boa constrictor-low_freq_street sign-blur_0.jpg",
+            "images/hybrid_images/hybrid_image_2_high_freq_boa constrictor-low_freq_street sign-blur_1.jpg",
+            "images/hybrid_images/hybrid_image_2_high_freq_boa constrictor-low_freq_street sign-blur_2.jpg",
+            "images/hybrid_images/hybrid_image_2_high_freq_boa constrictor-low_freq_street sign-blur_3.jpg",
+            "images/hybrid_images/hybrid_image_2_high_freq_boa constrictor-low_freq_street sign-blur_4.jpg"
+            ]
+        },
+        {
+            "number": 3,
+            "images": [
+            "images/hybrid_images/hybrid_image_3_high_freq_cash machine-low_freq_lab coat-blur_0.jpg",
+            "images/hybrid_images/hybrid_image_3_high_freq_cash machine-low_freq_lab coat-blur_1.jpg",
+            "images/hybrid_images/hybrid_image_3_high_freq_cash machine-low_freq_lab coat-blur_2.jpg",
+            "images/hybrid_images/hybrid_image_3_high_freq_cash machine-low_freq_lab coat-blur_3.jpg",
+            "images/hybrid_images/hybrid_image_3_high_freq_cash machine-low_freq_lab coat-blur_4.jpg"
+            ]
+        }
+        ],
+        "original_images": [
+        "images/hybrid_images/original_wooden spoon.jpg",
+        "images/hybrid_images/original_tow truck.jpg",
+        "images/hybrid_images/original_street sign.jpg",
+        "images/hybrid_images/original_squirrel monkey.jpg",
+        "images/hybrid_images/original_space shuttle.jpg",
+        "images/hybrid_images/original_red-breasted merganser.jpg",
+        "images/hybrid_images/original_red panda.jpg",
+        "images/hybrid_images/original_pomegranate.jpg",
+        "images/hybrid_images/original_oscilloscope.jpg",
+        "images/hybrid_images/original_lab coat.jpg",
+        "images/hybrid_images/original_koala.jpg",
+        "images/hybrid_images/original_horned rattlesnake.jpg",
+        "images/hybrid_images/original_hare.jpg",
+        "images/hybrid_images/original_dumbbell.jpg",
+        "images/hybrid_images/original_dhole.jpg",
+        "images/hybrid_images/original_desktop computer.jpg",
+        "images/hybrid_images/original_cash machine.jpg",
+        "images/hybrid_images/original_carpenter_s kit.jpg",
+        "images/hybrid_images/original_boa constrictor.jpg",
+        "images/hybrid_images/original_bloodhound.jpg",
+        ]
+    }
+
     // Initialize the jsPsych object (possibly with arguments: https://www.jspsych.org/7.3/reference/jspsych/)
     var jsPsych = initJsPsych({
         on_finish: function () {
@@ -31,7 +159,7 @@
 
     // The `write_data_to_server` function requires two global variables to be defined:
     // `url_write_data_php` (web location of the write_data.php script) and `output_filename`
-    var url_experiment_dir = 'https://msaddler.scripts.mit.edu/jspsych_tutorial_960/';
+    var url_experiment_dir = 'https://ngot.scripts.mit.edu/jspsych_tutorial_960/';
     var url_write_data_php = url_experiment_dir + 'write_data.php';
     var subject_id = jsPsych.data.getURLVariable('subject_id');
     console.log(`subject_id from URL: ${subject_id}`);
@@ -56,44 +184,173 @@
     var first_page = {
         type: jsPsychHtmlButtonResponse, // This trial will use the "html-button-response" plugin
         stimulus: [
-            '<h2>Simple image classification experiment</h2>' +
-            '<p>In this experiment, you will briefly see images of human faces.</p>' +
-            '<p>Your task is to report if the person pictured was wearing a face mask, ' +
-            'and if so, were they wearing it correctly?</p>'
+            '<h2>Identifying Hybrid Image </h2>' +
+            '<p>In this experiment, you will be go through a sequence of hybrid images and identify the objects that you mainly see. ' +
+                'You will first go through a habituation stage, where we will familiarize the images that you are expected to see</p>' +
+            '<p>In the main experiment, for each each trial, a hybrid image will be displayed, where you are expected to choose from two objects. </p>'
         ],
-        choices: ['Begin experiment'],
+        choices: ['Next'],
     };
     timeline.push(first_page);
 
+    var second_page = {
+        type: jsPsychHtmlButtonResponse, // This trial will use the "html-button-response" plugin
+        stimulus: [
+            '<h2>Habituation Stage</h2>' +
+            '<p>You will go through about 20 images that that you are expected to remember and identify</p>'
+        ],
+        choices: ['Next'],
+    };
+    timeline.push(second_page);
+
     // Define some variables that will be shared across all image trials
-    var prompt_str = 'Was the person pictured correctly wearing a face mask?';
-    var choices = ['Correctly wearing mask', 'Incorrectly wearing mask', 'Not wearing mask'];
+    var prompt_str = 'What object do you see INITIALLY?';
     var maintain_aspect_ratio = true;
-    var stimulus_width = 300; // Image width in pixels (null will use native width)
-    var stimulus_duration = 500; // Image presentation duration in ms
+    var stimulus_width = 550; // Image width in pixels (null will use native width)
+    var stimulus_duration = 10000; // Image presentation duration in ms
 
     // Programatically prepare a list of variables that will vary by trials
-    var timeline_variables_for_trials = [];
-    var factors = {
-        condition: [0, 1, 2], // 3 conditions numbered 0, 1, 2
-        image_num: arange(50, 53, 1), // 3 images numbered 50 to 52
-    };
-    var full_design = jsPsych.randomization.factorial(factors, 1);
-    var unique_stimulus_duration = [250, 750];
-    var list_stimulus_duration = jsPsych.randomization.repeat(
-        unique_stimulus_duration,
-        full_design.length / unique_stimulus_duration.length);
-    for (var itr_trial = 0; itr_trial < full_design.length; itr_trial += 1) {
-        var condition = full_design[itr_trial].condition;
-        var image_num = full_design[itr_trial].image_num;
-        timeline_variables_for_trials.push({
-            image_path: `images/condition${condition}/${image_num}.png`,
-            stimulus_duration: list_stimulus_duration[itr_trial],
-            key_answer: `${condition}`,
-        });
-    }
-    console.log(JSON.stringify(timeline_variables_for_trials));
+    // Function to process the images and create timeline_variables_for_trials
 
+    hybrid_images = imageList.hybrid_images
+    original_images = imageList.hybrid_images
+
+    // Regular expression to extract the placeholders from the file path
+    const regex = /hybrid_image_(\d+)_high_freq_(.+?)-low_freq_(.+?)-blur_(\d+)\.jpg$/;
+
+    function sampleImageFromHybridImageGroup(hybrid_images, number) {
+        const group = hybrid_images.find(hybrid_image => hybrid_image.number === number);
+        if (!group) {
+            throw new Error(`No hybrid_image group found with number ${number}`);
+        }
+
+        const randomIndex = Math.floor(Math.random() * group.images.length);
+        return group.images[randomIndex];
+    }
+
+    const seenSampledPaths = new Set();
+
+    function getOriginalImages(original_images) {
+      let originalImages = [];
+      let originalClassMap = {};
+      for (const originalPath of original_images) {
+        let imageFile = originalPath.split('/').pop();
+        if (imageFile.startsWith('original_')) {
+          const className = imageFile.replace('original_', '').replace('.jpg', '');
+          originalImages.push(originalPath);
+          originalClassMap[originalPath] = className;
+        }
+      }
+
+      return [originalImages, originalClassMap]
+    }
+
+    function processHybridImageAndCreateTimelineVariables(hybrid_images) {
+      let hybridImages = [];
+      let hybridPropertiesMap = {};
+      for (let i = 1; i < imageList.hybrid_images.length+1; i++) {
+        let sampled_path;
+        do {
+            sampled_path = sampleImageFromHybridImageGroup(hybrid_images, i);
+        } while (seenSampledPaths.has(sampled_path));
+
+        seenSampledPaths.add(sampled_path);
+
+        let match = sampled_path.match(regex);
+        hybridImages.push(sampled_path);
+
+        console.log(sampled_path, "SAMPLED_PATH_FOR_HYBRID_IMAGE_", i)
+        console.log(match[0], match[1], match[2], match[3], match[4])
+        hybridPropertiesMap[sampled_path] = {
+            hybrid_image_path: match[0],
+            high_freq: match[2],
+            low_freq: match[3],
+            hybrid_image_identifier: match[1],
+            blurring_level: match[4]
+        }
+      }
+
+      let timeline_variables_for_trials = [];
+
+      // Use hybridImages and hybridPropertiesMap to create your timeline_variables_for_trials
+      // This is an example, modify as needed
+      console.log("LENGTH OF HYBRID IMAGES", hybridImages.length)
+      for (let i = 0; i < hybridImages.length; i++) {
+        const imagePath = hybridImages[i];
+        const properties = hybridPropertiesMap[imagePath];
+
+        timeline_variables_for_trials.push({
+          image_path: imagePath,
+          high_freq: properties.high_freq,
+          low_freq: properties.low_freq,
+          hybrid_image_identifier: properties.hybrid_image_identifier,
+          choices: [properties.high_freq, properties.low_freq],
+          stimulus_duration: stimulus_duration,
+          blurring_level: properties.blurring_level,
+          hybrid_image_path: properties.hybrid_image_path
+        });
+      }
+
+      return timeline_variables_for_trials
+    }
+
+
+    // Create the timeline_variables_for_trials array
+    [originalImages, originalClassMap] = getOriginalImages(imageList.original_images);
+
+    // Create the habituation step
+    function processOriginalImagesAndCreateTimelineVariables(originalImages, originalClassMap) {
+        let timeline_variables_for_habituation = [];
+
+        for (const imagePath of originalImages) {
+            const className = originalClassMap[imagePath];
+            timeline_variables_for_habituation.push({
+                image_path: imagePath,
+                correct_class: className,
+                stimulus_duration: stimulus_duration,
+            });
+        }
+
+        return timeline_variables_for_habituation;
+    }
+
+    const timeline_variables_for_habituation = processOriginalImagesAndCreateTimelineVariables(originalImages, originalClassMap);
+    var timeline_for_habituation = [
+        {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: function() {
+            return '<img src="' + jsPsych.timelineVariable('image_path') + '" width="' + stimulus_width + '" style="max-width: 100%;"/>';
+        },
+        maintain_aspect_ratio: maintain_aspect_ratio,
+        stimulus_width: stimulus_width,
+        prompt: function() {
+            return "This is a " + jsPsych.timelineVariable('correct_class');
+        },
+        choices: ['Next'],
+        data: {
+            stimulus_duration: jsPsych.timelineVariable('stimulus_duration'),
+        },
+     },
+    ];
+
+    var habituation_trials = {
+        timeline: timeline_for_habituation,
+        timeline_variables: timeline_variables_for_habituation,
+        randomize_order: true,
+    };
+    timeline.push(habituation_trials);
+
+    var experiment_page = {
+        type: jsPsychHtmlButtonResponse, // This trial will use the "html-button-response" plugin
+        stimulus: [
+            '<h2>Main Experiment Stage - Block 1</h2>' +
+            '<p>You will now see 10 hybrid images. You must identify the first object you see INITIALLY. Because these are hybrid images, there are, of course, two objects you may see. We want you to choose the first object you see.</p>'
+        ],
+        choices: ['Next'],
+    };
+    timeline.push(experiment_page);
+
+    timeline_variables_for_trials = processHybridImageAndCreateTimelineVariables(imageList.hybrid_images)
     // Prepare timeline for the individual trials
     var timeline_for_trials = [
         {
@@ -103,34 +360,17 @@
             stimulus_width: stimulus_width,
             stimulus_duration: jsPsych.timelineVariable('stimulus_duration'),
             prompt: prompt_str,
-            choices: choices,
+            choices: jsPsych.timelineVariable('choices'),
             data: {
+                low_freq: jsPsych.timelineVariable('low_freq'),
+                high_freq: jsPsych.timelineVariable('high_freq'),
                 stimulus_duration: jsPsych.timelineVariable('stimulus_duration'),
+                to_be_analyzed: true,
+                blurring_level: jsPsych.timelineVariable('blurring_level'),
+                hybrid_image_identifier: jsPsych.timelineVariable('hybrid_image_identifier'),
+                hybrid_image_path: jsPsych.timelineVariable('hybrid_image_path')
             },
         },
-        // {
-        //     type: jsPsychCategorizeImage, // This trial will use the "categorize-image" plugin
-        //     stimulus: jsPsych.timelineVariable('image_path'),
-        //     maintain_aspect_ratio: maintain_aspect_ratio,
-        //     stimulus_width: stimulus_width,
-        //     stimulus_duration: jsPsych.timelineVariable('stimulus_duration'),
-        //     prompt: [
-        //         '<h3>0 = No mask</h3>' +
-        //         '<h3>1 = Mask worn correctly</h3>' +
-        //         '<h3>2 = Mask worn incorrectly</h3>'
-        //     ],
-        //     choices: ['0', '1', '2'],
-        //     show_stim_with_feedback: false,
-        //     feedback_duration: 1000,
-        //     correct_text: 'Correct',
-        //     incorrect_text: 'The correct response was %ANS%',
-        //     text_answer: jsPsych.timelineVariable('key_answer'),
-        //     key_answer: jsPsych.timelineVariable('key_answer'),
-        //     data: {
-        //         key_answer: jsPsych.timelineVariable('key_answer'),
-        //         stimulus_duration: jsPsych.timelineVariable('stimulus_duration'),
-        //     },
-        // },
     ];
 
     // Add the trials to the main timeline
@@ -140,6 +380,100 @@
         randomize_order: true,
     };
     timeline.push(trials);
+
+    // Do the same thing for block 2
+    var experiment_page = {
+        type: jsPsychHtmlButtonResponse, // This trial will use the "html-button-response" plugin
+        stimulus: [
+            '<h2>Main Experiment Stage - Block 2</h2>' +
+            '<p>You will now see 10 hybrid images. You must identify the first object you see INITIALLY. Because these are hybrid images, there are, of course, two objects you may see. We want you to choose the first object you see.</p>'
+        ],
+        choices: ['Next'],
+    };
+
+    timeline.push(experiment_page);
+    timeline_variables_for_trials = processHybridImageAndCreateTimelineVariables(imageList.hybrid_images)
+    // Prepare timeline for the individual trials
+
+    console.log(seenSampledPaths.size, "LENGTH OF SEEN SAMPLEDPATHS BLOCK 2")
+
+    // Add the trials to the main timeline
+    var trials = {
+        timeline: timeline_for_trials,
+        timeline_variables: timeline_variables_for_trials,
+        randomize_order: true,
+    };
+    timeline.push(trials);
+
+    // Do the same thing for block 3
+    var experiment_page = {
+        type: jsPsychHtmlButtonResponse, // This trial will use the "html-button-response" plugin
+        stimulus: [
+            '<h2>Main Experiment Stage - Block 3</h2>' +
+            '<p>You will now see 10 hybrid images. You must identify the first object you see INITIALLY. Because these are hybrid images, there are, of course, two objects you may see. We want you to choose the first object you see.</p>'
+        ],
+        choices: ['Next'],
+    };
+
+    timeline.push(experiment_page);
+    timeline_variables_for_trials = processHybridImageAndCreateTimelineVariables(imageList.hybrid_images)
+    // Prepare timeline for the individual trials
+    console.log(seenSampledPaths.size, "LENGTH OF SEEN SAMPLEDPATHS BLOCK 3")
+
+    // Add the trials to the main timeline
+    var trials = {
+        timeline: timeline_for_trials,
+        timeline_variables: timeline_variables_for_trials,
+        randomize_order: true,
+    };
+    timeline.push(trials);
+
+    // Do the same thing for block 4
+    var experiment_page = {
+        type: jsPsychHtmlButtonResponse, // This trial will use the "html-button-response" plugin
+        stimulus: [
+            '<h2>Main Experiment Stage - Block 4</h2>' +
+            '<p>You will now see 10 hybrid images. You must identify the first object you see INITIALLY. Because these are hybrid images, there are, of course, two objects you may see. We want you to choose the first object you see.</p>'
+        ],
+        choices: ['Next'],
+    };
+
+    timeline.push(experiment_page);
+    timeline_variables_for_trials = processHybridImageAndCreateTimelineVariables(imageList.hybrid_images)
+    // Prepare timeline for the individual trials
+    console.log(seenSampledPaths.size, "LENGTH OF SEEN SAMPLEDPATHS BLOCK 4")
+
+    // Add the trials to the main timeline
+    var trials = {
+        timeline: timeline_for_trials,
+        timeline_variables: timeline_variables_for_trials,
+        randomize_order: true,
+    };
+    timeline.push(trials);
+
+    // Do the same thing for block 4
+    var experiment_page = {
+        type: jsPsychHtmlButtonResponse, // This trial will use the "html-button-response" plugin
+        stimulus: [
+            '<h2>Main Experiment Stage - Block 5</h2>' +
+            '<p>You will now see 10 hybrid images. You must identify the first object you see INITIALLY. Because these are hybrid images, there are, of course, two objects you may see. We want you to choose the first object you see.</p>'
+        ],
+        choices: ['Next'],
+    };
+
+    timeline.push(experiment_page);
+    timeline_variables_for_trials = processHybridImageAndCreateTimelineVariables(imageList.hybrid_images)
+    // Prepare timeline for the individual trials
+    console.log(seenSampledPaths.size, "LENGTH OF SEEN SAMPLEDPATHS BLOCK 5")
+
+    // Add the trials to the main timeline
+    var trials = {
+        timeline: timeline_for_trials,
+        timeline_variables: timeline_variables_for_trials,
+        randomize_order: true,
+    };
+    timeline.push(trials);
+
 
     var last_page = {
         type: jsPsychHtmlButtonResponse, // This trial will use the "html-button-response" plugin
